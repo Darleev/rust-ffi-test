@@ -28,6 +28,7 @@ jobs:
         NEWVARIABLE=$(gcm clang).source
         echo $NEWVARIABLE
       if: matrix.os == 'windows-latest'
+      shell: bash
     - uses: actions/checkout@v2
     - name: Run
       run: cargo run --verbose
