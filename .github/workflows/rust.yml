@@ -23,8 +23,7 @@ jobs:
         directory: ${{ runner.temp }}/llvm
     - name: Set LIBCLANG_PATH
       run: |
-        echo "LIBCLANG_PATH=C:\msys64\mingw64\bin" >> $env:GITHUB_ENV
-        ls C:\msys64\mingw64\bin
+        set LIBCLANG_PATH="C:\msys64\mingw64\bin"
         echo $LIBCLANG_PATH
       if: matrix.os == 'windows-latest'
       shell: cmd
