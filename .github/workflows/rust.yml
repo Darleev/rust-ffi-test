@@ -25,7 +25,6 @@ jobs:
         pacman -S  mingw64/mingw-w64-x86_64-clang
         echo "LIBCLANG_PATH=C:\msys64\mingw64\bin" >> $env:GITHUB_ENV
       if: matrix.os == 'windows-latest'
-      shell: bash
     - uses: actions/checkout@v2
     - name: Run
       run: |
