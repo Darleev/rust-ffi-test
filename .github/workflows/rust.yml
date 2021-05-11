@@ -28,5 +28,6 @@ jobs:
     - name: Run
       run: |
         echo $LIBCLANG_PATH
+        ls $LIBCLANG_PATH
         cargo run --verbose
       shell: cmd
