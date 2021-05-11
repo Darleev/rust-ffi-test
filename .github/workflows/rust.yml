@@ -22,12 +22,14 @@ jobs:
         directory: ${{ runner.temp }}/llvm
     - name: Set LIBCLANG_PATH
       run: |
-        echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
+        pacman -S  mingw64/mingw-w64-x86_64-clang
+        echo "LIBCLANG_PATH=C:\msys64\mingw64\bin" >> $env:GITHUB_ENV
       if: matrix.os == 'windows-latest'
+      shell: bash
     - uses: actions/checkout@v2
     - name: Run
       run: |
         echo $LIBCLANG_PATH
-        ls $LIBCLANG_PATH
+        ls C:\msys64\mingw64\bin
         cargo run --verbose
       shell: cmd
