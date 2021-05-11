@@ -23,13 +23,10 @@ jobs:
     - name: Set LIBCLANG_PATH
       run: |
         echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
-        VARIABLE=$((gcm clang).source -replace "clang.exe")
-        echo $VARIABLE
-        NEWVARIABLE=$(gcm clang).source
-        echo $NEWVARIABLE
       if: matrix.os == 'windows-latest'
-      shell: bash
     - uses: actions/checkout@v2
     - name: Run
-      run: cargo run --verbose
+      run: |
+        echo $LIBCLANG_PATH
+        cargo run --verbose
       shell: cmd
