@@ -2,6 +2,7 @@ name: Rust
 
 on:
   workflow_dispatch: {}
+  push:
 
 env:
   CARGO_TERM_COLOR: always
@@ -22,8 +23,8 @@ jobs:
         directory: ${{ runner.temp }}/llvm
     - name: Set LIBCLANG_PATH
       run: |
-        pacman -S  mingw64/mingw-w64-x86_64-clang
         echo "LIBCLANG_PATH=C:\msys64\mingw64\bin" >> $env:GITHUB_ENV
+        ls C:\msys64\mingw64\bin
       if: matrix.os == 'windows-latest'
       shell: cmd
     - uses: actions/checkout@v2
