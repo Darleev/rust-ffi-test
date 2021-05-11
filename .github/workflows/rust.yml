@@ -23,8 +23,9 @@ jobs:
         directory: ${{ runner.temp }}/llvm
     - name: Set LIBCLANG_PATH
       run: |
-        echo "LIBCLANG_PATH=C:\msys64\mingw64\lib" >> $env:GITHUB_ENV
-        ls C:\msys64\mingw64\lib
+        choco install llvm
+        #echo "LIBCLANG_PATH=C:\msys64\mingw64\lib" >> $env:GITHUB_ENV
+        #ls C:\msys64\mingw64\lib
       if: matrix.os == 'windows-latest'
     - uses: actions/checkout@v2
     - name: Run
