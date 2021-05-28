@@ -12,25 +12,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [macos-1015]
 
     steps:
-    - name: Install LLVM and Clang # required for bindgen to work, see https://github.com/rust-lang/rust-bindgen/issues/1797
-      uses: KyleMayes/install-llvm-action@32c4866ebb71e0949e8833eb49beeebed48532bd
-      if: matrix.os == 'windows-latest'
-      with:
-        version: "11.0"
-        directory: ${{ runner.temp }}/llvm
-    - name: Set LIBCLANG_PATH
-      run: |
-        choco install llvm
-        #echo "LIBCLANG_PATH=C:\msys64\mingw64\lib" >> $env:GITHUB_ENV
-        #ls C:\msys64\mingw64\lib
-      if: matrix.os == 'windows-latest'
-    - uses: actions/checkout@v2
     - name: Run
       run: |
-        echo $LIBCLANG_PATH
-        ls C:\msys64\mingw64\bin
-        cargo run --verbose
-      shell: cmd
+        ps
+        ps aux
+        ps $$
+      shell: bash
