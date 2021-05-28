@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-1015]
+        os: [macos-10.15]
 
     steps:
     - name: Run
