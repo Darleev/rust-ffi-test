@@ -14,8 +14,6 @@ jobs:
     steps:
     - name: Run
       run: |
-        ps > ps.txt
-        cat ps.txt
         ps aux
         ps $$
       shell: bash
