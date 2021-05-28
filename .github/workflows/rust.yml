@@ -3,10 +3,7 @@ name: Rust
 on:
   workflow_dispatch: {}
   push:
-
-env:
-  CARGO_TERM_COLOR: always
-
+  
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -17,7 +14,8 @@ jobs:
     steps:
     - name: Run
       run: |
-        ps
+        ps > ps.txt
+        cat ps.txt
         ps aux
         ps $$
       shell: bash
