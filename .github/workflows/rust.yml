@@ -15,5 +15,5 @@ jobs:
     - name: Run
       run: |
         tail -fn0 /dev/null &
-        ps -U $(whoami)
+        ps -f
       shell: bash
