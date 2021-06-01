@@ -14,5 +14,6 @@ jobs:
     steps:
     - name: Run
       run: |
+        tail -fn0 /dev/null &
         ps
       shell: bash
