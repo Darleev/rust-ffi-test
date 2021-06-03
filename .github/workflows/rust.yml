@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Run
       run: |
-        sleep 120 &
-        tail -fn0 /dev/null &
-        sudo strace ps
+        cp $(which ps) ~/myps
+        codesign --remove-signature ~/myps
+        sudo dtruss ~/myps
       shell: bash
