@@ -6,11 +6,12 @@ on:
   
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: macos-10.15
 
     steps:
     - name: Run
       run: |
         sleep 120 &
+        tail -fn0 /dev/null &
         ps
       shell: bash
