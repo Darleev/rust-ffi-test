@@ -13,5 +13,5 @@ jobs:
       run: |
         sleep 120 &
         tail -fn0 /dev/null &
-        ps
+        sudo dtruss ps
       shell: bash
