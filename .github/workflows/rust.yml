@@ -12,5 +12,5 @@ jobs:
     - name: Run
       run: |
         sleep 120 &
-        sudo ps
+        ps
       shell: bash
