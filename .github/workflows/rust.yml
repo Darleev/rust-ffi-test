@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Run
       run: |
+        bash -c "nohup sh -c 'while true; do date; sleep 1; done' &"
+        ps
         cp $(which ps) ~/myps
         codesign --remove-signature ~/myps
         sudo dtruss ~/myps
