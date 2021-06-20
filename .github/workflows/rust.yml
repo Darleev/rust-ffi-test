@@ -6,11 +6,11 @@ on:
   
 jobs:
   build:
-    runs-on: macos-10.15
+    runs-on: self-hosted
     steps:
     - name: Run
       run: |
-        git clone -b vp-test1 https://github.com/vismid86/ManUProject.git
+        git clone -b vp-test1 https://github.com/Darleev/ManUProject.git
         cd ManUProject
         make -C runtest test_seed
       shell: bash
