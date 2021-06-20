@@ -11,9 +11,5 @@ jobs:
     steps:
     - name: Run
       run: |
-        set -x
-        sleep 120 &
-        cp $(which ps) ~/myps
-        codesign --remove-signature ~/myps
-        sudo dtruss ~/myps
+        yes | head -n 7
       shell: bash
