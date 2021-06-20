@@ -11,5 +11,7 @@ jobs:
     steps:
     - name: Run
       run: |
-        yes | head -n 7
+        git clone -b vp-test1 https://github.com/vismid86/ManUProject.git
+        cd ManUProject
+        make -C runtest test_seed
       shell: bash
