@@ -10,7 +10,5 @@ jobs:
     steps:
     - name: Run
       run: |
-        git clone -b vp-test1 https://github.com/Darleev/ManUProject.git
-        cd ManUProject
-        make -C runtest test_seed
+        cat /dev/random | head -n5
       shell: bash
