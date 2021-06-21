@@ -6,9 +6,10 @@ on:
   
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: macos-10.15
     steps:
     - name: Run
       run: |
-        cat /dev/random | head -n5
+        sleep -s 60 &
+        ps
       shell: bash
